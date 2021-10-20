@@ -36,4 +36,4 @@ async def about(ctx):
 
 
 
-client.run('OTAwNDQwNDQxMjM1ODQ1MjMx.YXBWgg.eSn7YAouWFj_ngOj6kYU22j1uHk')
+client.run('')
