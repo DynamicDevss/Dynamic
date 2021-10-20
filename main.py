@@ -12,11 +12,11 @@ async def on_ready():
 
 
 @client.command()
-async def kick(ctx, member : discord.Member, *, reason=None):
+async def kick(ctx, member : discord.Member, *, reason=None, administrator=True):
     await member.kick(reason=reason)
 
 @client.command()
-async def ban(ctx, member : discord.Member, *, reason=None):
+async def ban(ctx, member : discord.Member, *, reason=None, administrator=True):
     await member.ban(reason=reason)
 
 
