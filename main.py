@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from discord.ext.commands import bot
 
 
 client = commands.Bot(command_prefix = [">"]) # creating bot variable with prefixes
