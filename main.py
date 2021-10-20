@@ -5,7 +5,7 @@ from discord.ext.commands import bot
 
 client = commands.Bot(command_prefix = [">"]) # creating bot variable with prefixes
 
-@bot.event()
+@client.event()
 async def on_ready():
     print('Logged on as {0}!'.format(self.user))
     await client.change_presence(status=discord.Status.online, activity = discord.Activity(type=discord.ActivityType.watching, name="your commands"))
