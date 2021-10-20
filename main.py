@@ -23,6 +23,11 @@ async def kick(ctx, member : discord.Member, *, reason=None, administrator=True)
 async def ban(ctx, member : discord.Member, *, reason=None, administrator=True):
     await member.ban(reason=reason)
 
+@client.command()
+async def clear(ctx, amount=5, administrator=True):
+    await ctx.channel.purge(limit=amount)
+
+
 
 @client.command()
 async def about(ctx):
