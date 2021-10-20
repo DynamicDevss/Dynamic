@@ -12,7 +12,7 @@ async def on_ready():
 
 @client.event
 async def on_command_error(ctx, error):
-    if isinstance(error, commands.notfound):
+    if isinstance(error, commands.CommandNotFound):
         await ctx.send ('Command not detected.')
 
 @client.command()
