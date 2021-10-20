@@ -10,6 +10,10 @@ async def on_ready():
     .format(client))
     await client.change_presence(status=discord.Status.online, activity = discord.Activity(type=discord.ActivityType.watching, name="your commands"))
 
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.notfound):
+        await ctx.send ('Command not detected.')
 
 @client.command()
 async def kick(ctx, member : discord.Member, *, reason=None, administrator=True):
