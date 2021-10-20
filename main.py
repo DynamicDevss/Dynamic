@@ -18,6 +18,9 @@ async def ping(ctx):
 async def about(ctx):
      await ctx.send('Hi! This is DynamicDevs first project! Dont expect much but hi')
 
+
+
+
 @bot.command()
 async def delta(ctx, *, member: JoinDistanceConverter):
     is_new = member.delta.days < 100
@@ -30,4 +33,4 @@ async def joined(ctx, *, member: discord.Member):
     await ctx.send('{0} joined on {0.joined_at}'.format(member))
 
 client = MyClient()
-client.run('dontgetmytokenprick')
+client.run('OTAwNDQwNDQxMjM1ODQ1MjMx.YXBWgg.eSn7YAouWFj_ngOj6kYU22j1uHk')
