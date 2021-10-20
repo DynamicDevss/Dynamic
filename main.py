@@ -12,6 +12,10 @@ client= commands.Bot(command_prefix = '<')
 async def ping(ctx):
     await ctx.send('pong')
 
+@client.command()
+async def about(ctx):
+     await ctx.send('Hi! This is DynamicDevs first project! Dont expect much but hi')
+
 
 client = MyClient()
 client.run('dontgetmytokenprick')
