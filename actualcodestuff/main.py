@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 
 
@@ -21,6 +22,14 @@ class helpCommand(commands.HelpCommand):
         return await super().send_command_help(command)
 
 client = commands.Bot(command_prefix='<', help_command=helpCommand())  # creating bot variable with prefixes
+
+@client.command()
+async def load(ctx, extension):
+    client.load_extension(f'cogs.{extension}')
+
+@client.command()
+async def unload(ctx, extension):
+    client.unload_extension(f'cogs.{extension}')
 
 @client.event
 async def on_ready():
@@ -54,7 +63,9 @@ async def about(ctx):
 
 client = commands.Bot(command_prefix = '<', help_command=helpCommand()) # creating bot variable with prefixes
 
-
+for filename in os.listdir('./cogs'):
+    if filename.endswith('.py'):
+        client.load_extension(f'cogs.{filename[:-3]}')
 
 client.run('')
 
