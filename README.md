@@ -3,6 +3,7 @@
 ## Requirments
 Dynamic is a python bot, below are a list of requirments (packages). Install them by doing `pip install <name of package>` in a command prompt or terminal window.
 - discord.py
+- youtube_dl
 
 ## About
 Dynamic is a multi-purpose discord bot made by DynamicDevs. This is the source coude.
