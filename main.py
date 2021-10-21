@@ -1,5 +1,6 @@
 import discord
 import os
+import youtube_dl
 from api import token
 from discord.ext import commands
 
@@ -39,7 +40,7 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
-client.run(token)
+client.run("OTAwNDQwNDQxMjM1ODQ1MjMx.YXBWgg.BnyoxqT2OEW9ksqKJ9GJUJBJMNc")
 
 
 #for actual admin cmd use "administrator=True"
