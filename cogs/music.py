@@ -16,17 +16,15 @@ class music(commands.Cog):
     async def on_ready(self):
         print('Cog #1 is up')
 
-
-
-
-
-
-
-@commands.command(pass_context=True)
-async def play(self, ctx, url):
+    @commands.command(pass_context=True)
+    async def play(self, ctx, url):
        guild = ctx.message.guild
        voice_client = guild.voice_client
        player = await voice_client.create_ytdl_player(url)
        players[server.id] = player
        player.start()
 
+        
+        
+def setup(client):
+    client.add_cog(music(client))
