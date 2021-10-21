@@ -1,5 +1,6 @@
 import discord
 import os
+import api
 from discord.ext import commands
 
 
@@ -52,7 +53,7 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
-client.run('')
+client.run(api.token)
 
 
 #for actual admin cmd use "administrator=True"
