@@ -40,7 +40,7 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
-client.run("OTAwNDQwNDQxMjM1ODQ1MjMx.YXBWgg.BnyoxqT2OEW9ksqKJ9GJUJBJMNc")
+client.run("OTAwNDQwNDQxMjM1ODQ1MjMx.YXBWgg.yx4IShsEKamgpplBobMWK5_Ulmw")
 
 
 #for actual admin cmd use "administrator=True"
