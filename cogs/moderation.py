@@ -10,6 +10,10 @@ class moderation(commands.Cog):
     async def on_ready(self):
             print('Moderation Cog is up')
 
+    @commands.command()
+    async def cog2test(self, ctx):
+        ctx.send('Cog 2 (moderation) is indeed up and working.')
+
 
     @commands.command()
     async def kick(self, ctx, member : discord.Member=None, *, reason=None, administrator=True):
