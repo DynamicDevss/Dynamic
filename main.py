@@ -1,7 +1,26 @@
 import discord
 from discord.ext import commands
 
-client = commands.Bot(command_prefix = [">"]) # creating bot variable with prefixes
+
+
+class helpCommand(commands.HelpCommand):
+
+    def __init__(self):
+        super().__init__()
+
+    async def send_bot_help(self, mapping):
+        return await super().send_bot_help(mapping)
+
+    async def send_cog_help(self, cog):
+        return await super().send_cog_help(cog)
+
+    async def send_group_help(self, group):
+        return await super().send_group_help(group)
+
+    async def send_command_help(self, command):
+        return await super().send_command_help(command)
+
+client = commands.Bot(command_prefix='<', help_command=helpCommand())  # creating bot variable with prefixes
 
 @client.event
 async def on_ready():
@@ -33,7 +52,12 @@ async def clear(ctx, amount=5, administrator=True):
 async def about(ctx):
      await ctx.send('Hi! This is DynamicDevs first project! Dont expect much but hi')
 
+client = commands.Bot(command_prefix = '<', help_command=helpCommand()) # creating bot variable with prefixes
 
 
 
 client.run('')
+
+
+#for actual admin cmd use "administrator=True"
+# TY!
