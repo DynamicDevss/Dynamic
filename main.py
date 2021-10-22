@@ -1,7 +1,6 @@
 import discord
 import os
-import youtube_dl
-from api import token
+import random
 from discord.ext import commands
 
 
@@ -28,7 +27,23 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send ('Command not detected.')
 
+cflist = [1,2]
 
+@client.command()
+async def coinflip(ctx):
+
+    if random.choice(cflist) == 1:
+
+        await ctx.send('Coinflip says: Heads')
+
+    else:
+
+        await ctx.send('Coinflip says: Tails')
+
+        
+
+    
+    
 
 
 @client.command()
@@ -40,7 +55,7 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
-client.run("OTAwNDQwNDQxMjM1ODQ1MjMx.YXBWgg.yx4IShsEKamgpplBobMWK5_Ulmw")
+client.run("")
 
 
 #for actual admin cmd use "administrator=True"

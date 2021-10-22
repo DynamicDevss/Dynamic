@@ -1,7 +1,6 @@
 import discord
 import os
 from discord.ext import commands
-import youtube_dl
 
 def setup(client):
     client.add_cog(music(client))
@@ -12,13 +11,9 @@ class music(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.Cog.listener()
-    async def on_ready(self):
-        print('Cog #1 is up')
+   
+    @commands.command()
+    async def cog1test(self, ctx):
+        ctx.send('Cog 1 () is indeed up and working.')
 
-    @commands.command(pass_context=True)
-    async def play(self, ctx, url):
-       guild = ctx.message.guild
-       voice_client = guild.voice_client
-       player = await voice_client.create_ytdl_player(url)
-       player.start()
+

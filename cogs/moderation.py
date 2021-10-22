@@ -12,7 +12,7 @@ class moderation(commands.Cog):
 
     @commands.command()
     async def cog2test(self, ctx):
-        ctx.send('Cog 2 (moderation) is indeed up and working.')
+       await ctx.send('Cog 2 (moderation) is indeed up and working.')
 
 
     @commands.command()
