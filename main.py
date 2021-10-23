@@ -41,22 +41,18 @@ async def coinflip(ctx):
 
         await ctx.send('Coinflip says: Tails')
 
-        
-
-    
-    
 
 
 @client.command()
 async def about(ctx):
-     await ctx.send('Hi! This is DynamicDevs first project! Don\'t expect much but hi')
+    await ctx.send('Hi! This is DynamicDevs first project! Don\'t expect much but hi')
 
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
-client.run("")
+client.run("OTAwNDQwNDQxMjM1ODQ1MjMx.YXBWgg.dXr5tq94zWJxpSRAN0L1wnFgIzc")
 
 
 #for actual admin cmd use "administrator=True"

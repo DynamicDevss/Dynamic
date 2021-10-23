@@ -4,13 +4,12 @@ from discord.ext import commands
 import youtube_dl
 
 
-
+@commands.command()
+async def cog1test(self, ctx):
+    await ctx.send('Cog 1 (music) is indeed up and working.')
 
 def setup(client):
     client.add_cog(music(client))
-
-
-
 
 class music(commands.Cog):
     def __init__(self, client):
@@ -36,7 +35,7 @@ class music(commands.Cog):
         FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect-streamed 1 -reconnect-delay-max 5', 'options': '-vn'}
         YDL_OPTIONS = {'format':"bestaudio"}
         print('Options have been declared')
-        vc: object = ctx.voice_client
+        vc = ctx.voice_client
         print('VC has been declared')
 
         with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
@@ -62,6 +61,4 @@ class music(commands.Cog):
 
 
 
-    @commands.command()
-    async def cog1test(self, ctx):
-        ctx.send('Cog 1 (music) is indeed up and working.')
+
